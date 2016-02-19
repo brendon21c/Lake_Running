@@ -71,6 +71,8 @@ public class LakeRunning {
             }
         }
 
+        System.out.println(lakeTimes.keySet());
+
     }
 
 
