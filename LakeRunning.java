@@ -86,7 +86,7 @@ public class LakeRunning {
             }
         }
 
-        return lakeTimes;
+        return lakeTimes; // returns the hashmap.
 
     }
 
