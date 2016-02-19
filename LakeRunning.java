@@ -8,6 +8,22 @@ public class LakeRunning {
 
     public static void main(String[] args) {
 
+        System.out.println(lake_Times().get("como"));
+
+
+    }
+
+
+
+
+
+    /*
+    This method asks the user for the names of the lakes and the run times they had. It
+    then stores that information into a Hashmap with the lake as the key and a list of run times as
+    the values.
+     */
+    public static HashMap lake_Times() {
+
 
 
         HashMap<String, LinkedList<Double>> lakeTimes = new HashMap<String, LinkedList<Double>>();
@@ -40,18 +56,17 @@ public class LakeRunning {
 
             String runAgain = scanner1.nextLine();
 
-            if (lakeTimes.containsKey(lake)) {
 
-                //times.removeAll(times);
-                //times.add(runTime);
-                //lakeTimes.put(lake, times);
+            if (lakeTimes.containsKey(lake)) { // checks if the lake entered has been entered before.
+
+
                 LinkedList time = lakeTimes.get(lake);
                 time.add(runTime);
                 lakeTimes.put(lake,time);
 
             }
 
-            else {
+            else { // This will add the lake and run time if no entry is found.
 
                 LinkedList time = new LinkedList();
                 time.add(runTime);
@@ -61,7 +76,7 @@ public class LakeRunning {
 
             }
 
-            if (runAgain.equalsIgnoreCase("n")) {
+            if (runAgain.equalsIgnoreCase("n")) { // loops the questionnaire.
 
                 break;
             }
@@ -71,9 +86,10 @@ public class LakeRunning {
             }
         }
 
-        System.out.println(lakeTimes.keySet()); // changes
+        return lakeTimes;
 
     }
+
 
 
 }
