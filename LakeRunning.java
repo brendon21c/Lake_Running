@@ -1,9 +1,6 @@
 package com.Brendon;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class LakeRunning {
 
@@ -18,28 +15,11 @@ public class LakeRunning {
 
         LinkedList lakes = new LinkedList();
 
-        LinkedList times = new LinkedList();
-
 
         for (Object key : working.keySet()) {
 
             lakes.add(key.toString());
         }
-
-        System.out.println(lakes.get(0));
-
-        for (int x = 0 ; x < lakes.size() ; x++) {
-
-            String lake = lakes.get(x).toString();
-
-            times.add(working.get(lake.));
-
-        }
-
-        Object final_time = times.get(0);
-
-
-
 
 
 
@@ -56,7 +36,7 @@ public class LakeRunning {
     then stores that information into a Hashmap with the lake as the key and a list of run times as
     the values.
      */
-    public static HashMap lake_Times() {
+    public static HashMap<String, LinkedList<Double>> lake_Times() {
 
 
 
@@ -67,9 +47,6 @@ public class LakeRunning {
         Scanner scanner1 = new Scanner(System.in);
         Scanner scanner2 = new Scanner(System.in);
 
-        //String lake = scanner.nextLine();
-
-        //Double runTime = scanner.nextDouble();
 
 
         while (true) {
@@ -80,11 +57,6 @@ public class LakeRunning {
             System.out.println("What was your time: ");
             Double runTime = scanner2.nextDouble();
 
-            //LinkedList times = new LinkedList();
-
-            //times.add(runTime);
-
-            //lakeTimes.put(lake, times);
 
             System.out.println("Do you want to make another entry? ");
 
