@@ -1,5 +1,6 @@
 package com.Brendon;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -8,23 +9,38 @@ public class LakeRunning {
 
     public static void main(String[] args) {
 
+        /*
+        This section of code is where I am at. I can iterate ove the keys, but I don't know how
+        to work with the List inside the Hashmap.
+         */
+
         HashMap working = lake_Times();
 
         LinkedList lakes = new LinkedList();
 
+        LinkedList times = new LinkedList();
 
 
         for (Object key : working.keySet()) {
 
-            lakes.add(key);
+            lakes.add(key.toString());
         }
+
+        System.out.println(lakes.get(0));
 
         for (int x = 0 ; x < lakes.size() ; x++) {
 
-            String key = lakes.get(x).toString();
+            String lake = lakes.get(x).toString();
 
-            System.out.println(lake_Times().get(key));
+            times.add(working.get(lake.));
+
         }
+
+        Object final_time = times.get(0);
+
+
+
+
 
 
 
