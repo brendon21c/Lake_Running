@@ -8,7 +8,25 @@ public class LakeRunning {
 
     public static void main(String[] args) {
 
-        System.out.println(lake_Times().get("como"));
+        HashMap working = lake_Times();
+
+        LinkedList lakes = new LinkedList();
+
+
+
+        for (Object key : working.keySet()) {
+
+            lakes.add(key);
+        }
+
+        for (int x = 0 ; x < lakes.size() ; x++) {
+
+            String key = lakes.get(x).toString();
+
+            System.out.println(lake_Times().get(key));
+        }
+
+
 
 
     }
