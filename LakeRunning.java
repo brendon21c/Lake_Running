@@ -6,39 +6,6 @@ public class LakeRunning {
 
     public static void main(String[] args) {
 
-        /*
-        This section of code is where I am at. I can iterate ove the keys, but I don't know how
-        to work with the List inside the Hashmap.
-         */
-
-        HashMap working = lake_Times();
-
-        LinkedList lakes = new LinkedList();
-
-
-        for (Object key : working.keySet()) {
-
-            lakes.add(key.toString());
-        }
-
-
-
-
-
-    }
-
-
-
-
-
-    /*
-    This method asks the user for the names of the lakes and the run times they had. It
-    then stores that information into a Hashmap with the lake as the key and a list of run times as
-    the values.
-     */
-    public static HashMap<String, LinkedList<Double>> lake_Times() {
-
-
 
         HashMap<String, LinkedList<Double>> lakeTimes = new HashMap<String, LinkedList<Double>>();
 
@@ -92,7 +59,25 @@ public class LakeRunning {
             }
         }
 
-        return lakeTimes; // returns the hashmap.
+        LinkedList lakes = new LinkedList();
+
+
+        for (String key : lakeTimes.keySet()) {
+
+            lakes.add(key);
+        }
+
+        for (int x = 0 ; x < lakes.size() ; x++) {
+
+            LinkedList time = lakeTimes.get(lakes.get(x));
+
+            Object max = Collections.max(time);
+
+            System.out.println("The highest run time for each was: ");
+            System.out.println();
+            System.out.println(lakes.get(x).toString() + " " + max);
+
+        }
 
     }
 
